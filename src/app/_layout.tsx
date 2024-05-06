@@ -9,6 +9,7 @@ import {
 
 // Import your global CSS file
 import "../styles/global.css";
+import { Loading } from "../components/loading";
 
 export default function Layout() {
   const [fontsLoaded] = useFonts({
@@ -24,7 +25,7 @@ export default function Layout() {
   return (
     <>
       <StatusBar style="light" />
-      <Slot />
+      {fontsLoaded ? <Slot /> : <Loading />}
     </>
   );
 }
